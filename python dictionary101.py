@@ -26,7 +26,7 @@ languages = {"yoruba": yoruba_dictionary}
 
 print("Available languages:")
 for language in languages:
-        print("-", language.capitalize())
+        print("-", language.capitalize()
 
 chosen_language = input("choose a language:").strip().lower()
 
@@ -41,6 +41,7 @@ if chosen_language in languages:
                 print("Word not found in the dictionary.")
 else:
 print("Language not available")".strip().lower()
+
 
 
 
