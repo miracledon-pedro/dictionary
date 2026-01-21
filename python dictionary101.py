@@ -1,3 +1,5 @@
+import streamlit as st
+
 yoruba_dictionary = {
     "hello": "bawo",
     "food": "ounje",
@@ -5,24 +7,17 @@ yoruba_dictionary = {
     "house": "ile"
 }
 
-languages = {"yoruba": yoruba_dictionary}
+st.title("English to Yoruba Dictionary")
 
-print("Available languages:")
-for language in languages:
-    print("-", language.capitalize())
+language = st.selectbox("Choose a language", ["yoruba"])
+word = st.text_input("Enter an English word")
 
-chosen_language = input("Choose a language: ").strip().lower()
-
-if chosen_language in languages:
-    word = input("Enter an English word: ").strip().lower()
-    dictionary = languages[chosen_language]
-
-    if word in dictionary:
-        print("Translation:", dictionary[word])
+if word:
+    if word.lower() in yoruba_dictionary:
+        st.success(f"Translation: {yoruba_dictionary[word.lower()]}")
     else:
-        print("Word not found in dictionary.")
-else:
-    print("Language not available.")
+        st.error("Word not found")
+
 
 
 
@@ -30,4 +25,5 @@ else:
 
 
                        
+
 
